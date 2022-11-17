@@ -19,7 +19,8 @@ public class BasicMovement : MonoBehaviour
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
 
-        animator.SetFloat("Horizontal", shoot.x);
+        animator.SetFloat("ShootDirection", shoot.x);
+        animator.SetBool("FacingRight", FacingDirection());
         animator.SetBool("Shoot", Input.GetButton("ShootLaser"));
 
         transform.position = transform.position + movement * moveSpeed * Time.deltaTime;
@@ -36,6 +37,20 @@ public class BasicMovement : MonoBehaviour
             GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.identity);
             laser.GetComponent<Rigidbody2D>().velocity = shootingDirection * 8.0f;
             Destroy(laser, 2.0f);
+        }
+    }
+
+    private bool FacingDirection()
+    {
+        Vector2 facingDirection = new Vector2(Input.GetAxis("Horizontal"), 0.0f);
+
+        if (facingDirection.x > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }
