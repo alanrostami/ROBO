@@ -10,11 +10,12 @@ public class ROBOMoves : MonoBehaviour
 
     private float moveX = 0.0f;
     private float moveY = 0.0f;
+    public bool isFacingRight = true;
     [SerializeField] private float moveSpeed = 5.0f;
 
     // List of player's animation states
-    private enum ROBOAnimationState {idle, moving, shooting, stop}
-    private ROBOAnimationState state = ROBOAnimationState.idle;
+    private enum ROBOAnimationState {idle, moving, stop}
+    // private ROBOAnimationState state = ROBOAnimationState.idle;
 
     private void Start()
     {
@@ -30,13 +31,6 @@ public class ROBOMoves : MonoBehaviour
 
         rgdbdy.velocity = new Vector2(moveX * moveSpeed, moveY * moveSpeed);
 
-        // if (Input.GetButtonDown("Shoot"))
-        // {
-        //     Debug.Log("Shoot");
-        //     state = ROBOAnimationState.shooting;
-        //     animator.SetInteger("State", (int)state);
-        // }
-
         UpdateAnimationState();
     }
 
@@ -44,15 +38,23 @@ public class ROBOMoves : MonoBehaviour
     {
         ROBOAnimationState state;
 
-        if (moveX > 0.1f)
+        if (moveX > 0.1f && !isFacingRight)
         {
             state = ROBOAnimationState.moving;
-            sprite.flipX = false;
+            // sprite.flipX = false;
+            // isFacingRight = true;
+
+            // Flip the player
+            Flip();
         }
-        else if (moveX < -0.1f)
+        else if (moveX < -0.1f && isFacingRight)
         {
             state = ROBOAnimationState.moving;
-            sprite.flipX = true;
+            // sprite.flipX = true;
+            // isFacingRight = false;
+
+            // Flip the player
+            Flip();
         }
         else if (moveX > -0.1f || moveX < 0.1f)
         {
@@ -64,5 +66,13 @@ public class ROBOMoves : MonoBehaviour
         }
 
         animator.SetInteger("State", (int)state);
+    }
+
+    private void Flip()
+    {
+        // Switch the player facing direction
+        isFacingRight = !isFacingRight;
+
+        transform.Rotate(0.0f, 180.0f, 0.0f);
     }
 }
