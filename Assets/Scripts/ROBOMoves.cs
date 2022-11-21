@@ -38,23 +38,23 @@ public class ROBOMoves : MonoBehaviour
     {
         ROBOAnimationState state;
 
-        if (moveX > 0.1f && !isFacingRight)
+        if (moveX > 0.1f)
         {
             state = ROBOAnimationState.moving;
-            // sprite.flipX = false;
-            // isFacingRight = true;
+            sprite.flipX = false;
+            isFacingRight = true;
 
             // Flip the player
-            Flip();
+            // Flip();
         }
-        else if (moveX < -0.1f && isFacingRight)
+        else if (moveX < -0.1f)
         {
             state = ROBOAnimationState.moving;
-            // sprite.flipX = true;
-            // isFacingRight = false;
+            sprite.flipX = true;
+            isFacingRight = false;
 
             // Flip the player
-            Flip();
+            // Flip();
         }
         else if (moveX > -0.1f || moveX < 0.1f)
         {
