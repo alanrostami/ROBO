@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2376271155280017951}
   - component: {fileID: 2376271155280017949}
   - component: {fileID: -3382749156021937126}
+  - component: {fileID: 7270012106398228238}
   - component: {fileID: 6931872424423190216}
   m_Layer: 0
   m_Name: LaserBeamLeft
@@ -155,6 +156,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
+--- !u!114 &7270012106398228238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2376271155280017948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b48758696289764ab35d4c68c796f78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6931872424423190216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,4 +180,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e9fed63e97d6645948921f948d851f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: {x: 0, y: 0}
