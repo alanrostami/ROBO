@@ -30,9 +30,22 @@ public class AlienSpawner : MonoBehaviour
 
         if (totalAliens.Length == 0 && !canSpawn)
         {
-            currentWaveNumber++;
-            canSpawn = true;
+            if (currentWaveNumber + 1 != alienWaves.Length)
+            {
+                // Add UI for Alien alerts from the ship
+                SpawnNextWave();
+            }
+            else
+            {
+                Debug.Log("End of Level One");
+            }
         }
+    }
+
+    void SpawnNextWave()
+    {
+        currentWaveNumber++;
+        canSpawn = true;
     }
 
     void SpawnWave()

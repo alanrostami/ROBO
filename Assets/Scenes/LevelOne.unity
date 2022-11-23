@@ -1556,8 +1556,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alienWaves:
   - waveTitle: Green Wave
+    numberOfAliens: 3
+    typeOfAliens:
+    - {fileID: 3602398945262124452, guid: e0ba517cb3c249d408b1292aaa054797, type: 3}
+    spawnInterval: 30
   - waveTitle: Orange Wave
+    numberOfAliens: 5
+    typeOfAliens:
+    - {fileID: 5304039171618004202, guid: 59292e64829fa1d4095d08d06929ae5e, type: 3}
+    spawnInterval: 20
   - waveTitle: Purple Wave
+    numberOfAliens: 8
+    typeOfAliens:
+    - {fileID: 4258838529012535949, guid: 32008187b6a25534abcc5038fce76c61, type: 3}
+    spawnInterval: 15
+  - waveTitle: Mixed Wave
+    numberOfAliens: 13
+    typeOfAliens:
+    - {fileID: 3602398945262124452, guid: e0ba517cb3c249d408b1292aaa054797, type: 3}
+    - {fileID: 5304039171618004202, guid: 59292e64829fa1d4095d08d06929ae5e, type: 3}
+    - {fileID: 4258838529012535949, guid: 32008187b6a25534abcc5038fce76c61, type: 3}
+    spawnInterval: 10
+  - waveTitle: Final Wave
+    numberOfAliens: 21
+    typeOfAliens:
+    - {fileID: 3602398945262124452, guid: e0ba517cb3c249d408b1292aaa054797, type: 3}
+    - {fileID: 5304039171618004202, guid: 59292e64829fa1d4095d08d06929ae5e, type: 3}
+    - {fileID: 4258838529012535949, guid: 32008187b6a25534abcc5038fce76c61, type: 3}
+    spawnInterval: 5
+  spawnPoints:
+  - {fileID: 1123394848}
+  - {fileID: 1628929218}
+  - {fileID: 764536993}
+  - {fileID: 557580373}
+  - {fileID: 828523641}
+  - {fileID: 2023132057}
+  - {fileID: 1170816287}
+  - {fileID: 1126857885}
+  - {fileID: 1158780320}
+  - {fileID: 398808308}
+  - {fileID: 1036477532}
+  - {fileID: 1931388014}
+  - {fileID: 812404050}
+  - {fileID: 688940816}
 --- !u!4 &463104373
 Transform:
   m_ObjectHideFlags: 0
