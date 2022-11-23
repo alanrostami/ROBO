@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 3602398945262124473}
   - component: {fileID: 3602398945262124472}
   - component: {fileID: 5222175780098065866}
-  - component: {fileID: 4336467605106311774}
   m_Layer: 0
   m_Name: GreenAlien
   m_TagString: Alien
@@ -30,12 +29,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3602398945262124452}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -36.059647, y: -1.6304363, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3602398945262124474
 SpriteRenderer:
@@ -170,24 +169,8 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3602398945262124452}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea31fa6741d9b7f47bea3ef77e14c578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alienSpeed: 0.5
---- !u!114 &4336467605106311774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3602398945262124452}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b8a440c3fd210a4f9db07c8716a95d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathPoints:
-  - {fileID: 0}
-  moveSpeed: 1
