@@ -1035,7 +1035,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 171163776}
-  - component: {fileID: 171163775}
   m_Layer: 0
   m_Name: AlienFollowsPath
   m_TagString: Untagged
@@ -1043,51 +1042,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &171163775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 171163774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1258ed289c7a3ef4685259159c316201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathPoints:
-  - {fileID: 1116455960}
-  - {fileID: 412620565}
-  - {fileID: 1166470353}
-  - {fileID: 1175679850}
-  - {fileID: 1421984026}
-  - {fileID: 1967456469}
-  - {fileID: 1771913579}
-  - {fileID: 830761089}
-  - {fileID: 766612112}
-  - {fileID: 432058518}
-  - {fileID: 1521503797}
-  - {fileID: 511176410}
-  - {fileID: 1956541718}
-  - {fileID: 2109848163}
-  - {fileID: 383259248}
-  - {fileID: 1693568602}
-  - {fileID: 253812442}
-  - {fileID: 2117249039}
-  - {fileID: 1187414964}
-  - {fileID: 1235502048}
-  - {fileID: 1878250012}
-  - {fileID: 967847835}
-  - {fileID: 2043593853}
-  - {fileID: 2094744904}
-  - {fileID: 737132361}
-  - {fileID: 858677782}
-  - {fileID: 719711935}
-  - {fileID: 1879370991}
-  - {fileID: 1581830715}
-  - {fileID: 1074473789}
-  moveSpeed: 1
-  alienPrefab: {fileID: 3602398945262124452, guid: e0ba517cb3c249d408b1292aaa054797, type: 3}
 --- !u!4 &171163776
 Transform:
   m_ObjectHideFlags: 0

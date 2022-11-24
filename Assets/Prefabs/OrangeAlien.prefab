@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 5304039171618004193}
   - component: {fileID: 5304039171618004206}
   - component: {fileID: 5304039171618004207}
+  - component: {fileID: -1527708163167215443}
+  - component: {fileID: 1720982719296402026}
   m_Layer: 0
   m_Name: OrangeAlien
   m_TagString: Alien
@@ -144,3 +146,42 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
+--- !u!61 &-1527708163167215443
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5304039171618004202}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.2710899, y: -0.40925932}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.4, y: 2.4}
+    newSize: {x: 2.4, y: 2.4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.23569798, y: 1.1564815}
+  m_EdgeRadius: 0
+--- !u!114 &1720982719296402026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5304039171618004202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea31fa6741d9b7f47bea3ef77e14c578, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alienSpeed: 1.5
