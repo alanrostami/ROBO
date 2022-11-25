@@ -2497,7 +2497,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &583223486
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3741,6 +3741,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 799745215}
+  - component: {fileID: 799745217}
   - component: {fileID: 799745216}
   m_Layer: 0
   m_Name: TaskSystem
@@ -3778,23 +3779,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4bfbf47ac021f5409dc5fcba827e5a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tasks:
-  - taskTitle: Task1
-    numberOfTasks: 1
-    typeOfTasks:
-    - {fileID: 4511376068420480283, guid: 47207ea6c32d5ce488568b27c798f3f4, type: 3}
-    taskInterval: 10
-  taskLocations:
-  - {fileID: 4549477187777603807}
-  - {fileID: 1893681333}
-  - {fileID: 530274710}
-  - {fileID: 148340774}
-  - {fileID: 846932788}
-  - {fileID: 1755373932}
-  - {fileID: 554097594}
-  - {fileID: 1464712051}
-  - {fileID: 1454474779}
-  - {fileID: 2066110772}
+  tasksToAnnounce:
+  - {fileID: 4511376068420480283, guid: 47207ea6c32d5ce488568b27c798f3f4, type: 3}
+  currentTask: 1
+  taskImportance: 0
+  taskLocation: {fileID: 4549477187777603807}
+  taskDeadline: 20
+--- !u!95 &799745217
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799745214}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fb2d926216e5b1f44b03658f9930811d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &812404049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3876,7 +3886,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &822148458
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8783,7 +8793,7 @@ GameObject:
   - component: {fileID: 1569171107}
   - component: {fileID: 1569171106}
   m_Layer: 5
-  m_Name: TaskDone
+  m_Name: TaskComplete
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10931,7 +10941,7 @@ GameObject:
   - component: {fileID: 2063256189}
   - component: {fileID: 2063256188}
   m_Layer: 5
-  m_Name: TaskTitle
+  m_Name: TaskAnnounce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
