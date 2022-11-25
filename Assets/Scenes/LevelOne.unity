@@ -3562,7 +3562,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4bfbf47ac021f5409dc5fcba827e5a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tasks: []
+  tasks:
+  - taskTitle: HiberPod
+    numberOfTasks: 1
+    typeOfTasks:
+    - {fileID: 4511376068420480283, guid: 47207ea6c32d5ce488568b27c798f3f4, type: 3}
+    taskInterval: 10
   taskLocations:
   - {fileID: 4549477187777603807}
   - {fileID: 1893681333}

@@ -52,9 +52,12 @@ public class TaskAnnouncement : MonoBehaviour
     {
         if (nextTask && nextTaskTime < Time.time)
         {
-            GameObject randomTask = currentTask.typeOfTasks[Random.Range(0, currentTask.typeOfTasks.Length)];
-            Transform randomTaskLocation = taskLocations[Random.Range(0, taskLocations.Length)];
-            Instantiate(randomTask, randomTaskLocation.position, Quaternion.identity);
+            // GameObject randomTask = currentTask.typeOfTasks[Random.Range(0, currentTask.typeOfTasks.Length)];
+            GameObject taskAnn = currentTask.typeOfTasks[currentTaskNumber];
+            // Transform randomTaskLocation = taskLocations[Random.Range(0, taskLocations.Length)];
+            Transform currTaskLocation = taskLocations[currentTaskNumber];
+            // Instantiate(randomTask, randomTaskLocation.position, Quaternion.identity);
+            Instantiate(taskAnn, currTaskLocation.position, Quaternion.identity);
             currentTask.numberOfTasks--;
             nextTaskTime = Time.time + currentTask.taskInterval;
 
