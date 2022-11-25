@@ -3742,7 +3742,7 @@ GameObject:
   m_Component:
   - component: {fileID: 799745215}
   - component: {fileID: 799745217}
-  - component: {fileID: 799745216}
+  - component: {fileID: 799745218}
   m_Layer: 0
   m_Name: TaskSystem
   m_TagString: Untagged
@@ -3767,24 +3767,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &799745216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 799745214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4bfbf47ac021f5409dc5fcba827e5a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tasksToAnnounce:
-  - {fileID: 4511376068420480283, guid: 47207ea6c32d5ce488568b27c798f3f4, type: 3}
-  currentTask: 1
-  taskImportance: 0
-  taskLocation: {fileID: 4549477187777603807}
-  taskDeadline: 20
 --- !u!95 &799745217
 Animator:
   serializedVersion: 4
@@ -3805,6 +3787,48 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &799745218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799745214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fa28e159bd31a14daf82676f6af6fd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missions:
+  - missionTitle: Mission One
+    numberOfTasks: 3
+    typeOfTasks:
+    - {fileID: 275939741460700528, guid: d79d991ef220cfb4fbb1f3f4ff938f53, type: 3}
+    timeBtwTasks: 10
+  - missionTitle: Mission Two
+    numberOfTasks: 3
+    typeOfTasks:
+    - {fileID: 275939741460700528, guid: d79d991ef220cfb4fbb1f3f4ff938f53, type: 3}
+    - {fileID: 4511376068420480283, guid: 47207ea6c32d5ce488568b27c798f3f4, type: 3}
+    timeBtwTasks: 10
+  - missionTitle: Mission Three
+    numberOfTasks: 3
+    typeOfTasks:
+    - {fileID: 275939741460700528, guid: d79d991ef220cfb4fbb1f3f4ff938f53, type: 3}
+    - {fileID: 4511376068420480283, guid: 47207ea6c32d5ce488568b27c798f3f4, type: 3}
+    - {fileID: 6350585384302777037, guid: baa1b47c96dfdc04eaaf61d6cc93a07e, type: 3}
+    timeBtwTasks: 10
+  taskLocations:
+  - {fileID: 4549477187777603807}
+  - {fileID: 1893681333}
+  - {fileID: 530274710}
+  - {fileID: 148340774}
+  - {fileID: 846932788}
+  - {fileID: 1755373932}
+  - {fileID: 554097594}
+  - {fileID: 1464712051}
+  - {fileID: 1454474779}
+  - {fileID: 2066110772}
 --- !u!1001 &812404049
 PrefabInstance:
   m_ObjectHideFlags: 0

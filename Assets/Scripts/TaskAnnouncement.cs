@@ -1,88 +1,88 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+// using System.Collections;
+// using System.Collections.Generic;
+// using UnityEngine;
 
-[System.Serializable]
-public class Task
-{
-    public GameObject taskPrefab;
-    public int taskDamage;
-}
+// [System.Serializable]
+// public class Task
+// {
+//     public GameObject taskPrefab;
+//     public int taskDamage;
+// }
 
-public class TaskAnnouncement : MonoBehaviour
-{
-    public List<Task> tasks = new List<Task>();
-    public List<GameObject> tasksToAnnounce = new List<GameObject>();
-    public int currentTask;
-    public int taskImportance;
+// public class TaskAnnouncement : MonoBehaviour
+// {
+//     public List<Task> tasks = new List<Task>();
+//     public List<GameObject> tasksToAnnounce = new List<GameObject>();
+//     public int currentMission;
+//     public int missionImportance;
 
-    public Transform taskLocation;
-    public int taskDeadline;
-    private float taskTimer;
-    private float tasksInterval;
-    private float tasksTimer;
+//     public Transform[] taskLocations;
+//     public int missionDeadline;
+//     private float missionTimer;
+//     private float timeBetweenTasks;
+//     private float taskTimer;
 
-    void Start()
-    {
-        GenerateTasks();
-    }
+//     void Start()
+//     {
+//         AnnounceMission();
+//     }
 
-    void FixedUpdate()
-    {
-        if (tasksTimer <= 0)
-        {
-            // Announce a task
-            if (tasksToAnnounce.Count > 0)
-            {
-                Instantiate(tasksToAnnounce[0], taskLocation.position, Quaternion.identity); // Announce first task in the tasks list
-                tasksToAnnounce.RemoveAt(0); // And remove it
-                tasksTimer = tasksInterval;
-            }
-            else
-            {
-                tasksTimer = 0; // If no tasks remain then end the tasks
-            }
-        }
-        else
-        {
-            tasksTimer -= Time.fixedDeltaTime;
-            taskTimer -= Time.fixedDeltaTime;
-        }
+//     void FixedUpdate()
+//     {
+//         if (taskTimer <= 0)
+//         {
+//             // Announce a task
+//             if (tasksToAnnounce.Count > 0)
+//             {
+//                 Instantiate(tasksToAnnounce[0], taskLocations[Random.Range(0, taskLocations.Length)].position, Quaternion.identity); // Announce first task in the tasks list
+//                 tasksToAnnounce.RemoveAt(0);
+//                 taskTimer = timeBetweenTasks;
+//             }
+//             else
+//             {
+//                 taskTimer = 0; // If no tasks remain then end the tasks
+//             }
+//         }
+//         else
+//         {
+//             taskTimer -= Time.fixedDeltaTime;
+//             missionTimer -= Time.fixedDeltaTime;
+//         }
 
-    }
+//     }
 
-    public void AnnounceTask()
-    {
-        taskImportance = currentTask * 10;
-        GenerateTasks();
+//     public void AnnounceMission()
+//     {
+//         missionImportance = currentMission * 10;
+//         AnnounceTask();
 
-        tasksInterval = taskDeadline / tasksToAnnounce.Count; // Gives a fixed time between each task
-        taskTimer = taskDeadline; // Task deadline is read only
-    }
+//         timeBetweenTasks = missionDeadline / tasksToAnnounce.Count; // Gives a fixed time between each task
+//         missionTimer = missionDeadline; // Task deadline is read only
+//     }
 
-    public void GenerateTasks()
-    {
-        List<GameObject> generateTasks = new List<GameObject>();
+//     public void AnnounceTask()
+//     {
+//         List<GameObject> generateTasks = new List<GameObject>();
 
-        while (taskImportance > 0)
-        {
-            int randTaskId = Random.Range(0, tasks.Count);
-            int randTaskDamage = tasks[randTaskId].taskDamage;
+//         while (missionImportance > 0)
+//         {
+//             int randTaskId = Random.Range(0, tasks.Count);
+//             int randTaskDamage = tasks[randTaskId].taskDamage;
 
-            if (taskImportance - randTaskDamage >= 0)
-            {
-                generateTasks.Add(tasks[randTaskId].taskPrefab);
-                taskImportance -= randTaskDamage;
-            }
-            else if (taskImportance <= 0)
-            {
-                break;
-            }
-        }
-        tasksToAnnounce.Clear();
-        tasksToAnnounce = generateTasks;
-    }
-}
+//             if (missionImportance - randTaskDamage >= 0)
+//             {
+//                 generateTasks.Add(tasks[randTaskId].taskPrefab);
+//                 missionImportance -= randTaskDamage;
+//             }
+//             else if (missionImportance <= 0)
+//             {
+//                 break;
+//             }
+//         }
+//         tasksToAnnounce.Clear();
+//         tasksToAnnounce = generateTasks;
+//     }
+// }
 
 
 // using UnityEngine.UI;
