@@ -30,7 +30,7 @@ public class TaskSystem : MonoBehaviour
         GameObject[] totalTasks = GameObject.FindGameObjectsWithTag("Task");
 
         // When ROBO completes all the tasks in each mission
-        if (totalTasks.Length == 0 && !canAnnounce)
+        if (totalTasks.Length == 0 && !canAnnounce && currentMissionNumber + 1 != missions.Length)
         {
             currentMissionNumber++;
             canAnnounce = true;
