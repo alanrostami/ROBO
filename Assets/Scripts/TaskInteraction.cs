@@ -6,9 +6,9 @@ public class TaskInteraction : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Task")
+        if (Input.GetButtonDown("Repair") && collision.tag == "Task")
         {
-            Debug.Log("Press shift to do the task");
+            Destroy(collision.gameObject);
         }
     }
 }
