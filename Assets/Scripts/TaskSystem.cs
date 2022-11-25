@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class Mission
 {
-    public string missionTitle;
+    public string taskTitle;
     public int numberOfTasks;
     public GameObject[] typeOfTasks;
     public float timeBtwTasks;
@@ -19,7 +19,7 @@ public class TaskSystem : MonoBehaviour
     public Mission[] missions;
     public Transform[] taskLocations;
     public Animator animator;
-    public Text missionAnnounce;
+    public Text taskAnnounce;
 
     private Mission currentMission;
     private int currentMissionNumber;
@@ -40,7 +40,7 @@ public class TaskSystem : MonoBehaviour
             {
                 if (announceAnimation)
                 {
-                    missionAnnounce.text = missions[currentMissionNumber + 1].missionTitle;
+                    taskAnnounce.text = missions[currentMissionNumber + 1].taskTitle;
                     animator.SetTrigger("MissionComplete");
                     announceAnimation = false;
                 }
@@ -65,6 +65,10 @@ public class TaskSystem : MonoBehaviour
             GameObject randomTask = currentMission.typeOfTasks[Random.Range(0, currentMission.typeOfTasks.Length)];
             Transform randomLocation = taskLocations[Random.Range(0, taskLocations.Length)];
             Instantiate(randomTask, randomLocation.position, Quaternion.identity);
+
+            announceAnimation = true;
+            taskAnnounce.text = missions[currentMissionNumber].taskTitle;
+            animator.SetTrigger("TaskAnnounce");
 
             currentMission.numberOfTasks--;
             nextAnnounceTime = Time.time + currentMission.timeBtwTasks;
