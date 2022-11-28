@@ -8,6 +8,8 @@ TagManager:
   - AlienSpawnPoint
   - TaskPoint
   - AlienTargetPoint
+  - Task
+  - AlienPathPoint
   layers:
   - Default
   - TransparentFX
@@ -42,6 +44,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Floor
+    uniqueID: 2127125827
+    locked: 0
   - name: Background
     uniqueID: 2113203947
     locked: 0
