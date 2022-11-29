@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 398116168570269657}
   - component: {fileID: 7467112424740963497}
   - component: {fileID: 6625305814546437975}
+  - component: {fileID: 3802297372652268387}
   m_Layer: 0
   m_Name: Square
   m_TagString: Task
@@ -101,3 +102,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.5
+--- !u!114 &3802297372652268387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275939741460700528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e490a3cec1394e749814899fe4eaa3e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
