@@ -4,16 +4,36 @@ using UnityEngine;
 
 public class TaskHiberPods : MonoBehaviour
 {
-    public bool taskIsDone;
-    // public Animator animator;
+    public bool taskIsDone = false;
+    // private float totalTime = 300.0f;
+    private float taskDeadline = 30.0f;
+
+    private void Update()
+    {
+        CountDown();
+        TaskFailed();
+    }
+
+    private void CountDown()
+    {
+        taskDeadline -= Time.deltaTime;
+    }
 
     public void DoTheTask()
+    {        
+        if (!taskIsDone)
+        {
+            taskIsDone = true;
+            Debug.Log("Task is done");
+        }
+    }
+
+    private void TaskFailed()
     {
-        Debug.Log("Task is done");
-        
-        // if (!taskIsDone)
-        // {
-        //     Debug.Log("Task is done");
-        // }
+        if (taskDeadline <= 0 && !taskIsDone)
+        {
+            Debug.Log("Ship damaged");
+            taskDeadline = 30.0f;
+        }
     }
 }

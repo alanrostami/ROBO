@@ -6,6 +6,7 @@ public class CameraController : MonoBehaviour
 {
     // Get player's Transform component
     [SerializeField] private Transform player;
+    
     private void Update()
     {
         // Set camera's position to player's position
