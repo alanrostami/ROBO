@@ -7,52 +7,36 @@ using System;
 public class HUDManager : MonoBehaviour
 {
     //This is a reference to the Text component on the HUD gameobject that will display how much time has passed since the level started
-    [SerializeField] private Text daysText;
-    [SerializeField] private Text spaceshipHealthText;
-    [SerializeField] private Text aliveHumansText;
-
-    private float currentSpaceshipHealth;
-    private float newSpaceshipHealth = 100;
-    private float daysToArrive = 300.0f;
+    public Text daysToArriveText;
+    public Text spaceshipHealthText;
+    public Text aliveHumansText;
+    public Text taskAnnounceText;
+    public Text aliensAlertText;
+    public int spaceshipHealth;
+    public int aliveHumans;
+    public float daysToArrive;
 
     private void Start()
     {
-        // Health.UpdateHealth -= ChangeValue;
+        spaceshipHealth = 100;
+        spaceshipHealthText.text = spaceshipHealth.ToString() + "%";
+
+        aliveHumans = 40;
+        aliveHumansText.text = aliveHumans.ToString();
+
+        daysToArrive = 30.0f;
+        daysToArriveText.text = daysToArrive.ToString("0");
     }
 
     private void Update()
     {
         DecreaseDays();
-        NewHealthValue();
-        // AliveHumans();
+        spaceshipHealthText.text = spaceshipHealth.ToString() + "%";
     }
 
     private void DecreaseDays()
     {
-        daysToArrive -= Time.deltaTime;
-        daysText.text = Mathf.Round(daysToArrive) + "";
-        // Debug.Log(daysToArrive);
-
-        if (currentSpaceshipHealth > 0)
-        {
-            // daysToArrive -= Time.deltaTime;
-
-            // Debug.Log(daysToArrive);
-
-            // daysText.text;
-        }
-    }
-
-    private void ChangeValue(int amount)
-    {
-
-    }
-
-    private void NewHealthValue()
-    {
-        if (currentSpaceshipHealth != newSpaceshipHealth)
-        {
-            
-        }
+        daysToArrive -= 0.01f * Time.deltaTime;
+        daysToArriveText.text = daysToArrive.ToString("0");
     }
 }
