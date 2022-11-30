@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Engine2
       objectReference: {fileID: 0}
+    - target: {fileID: 3992527233677860015, guid: 8d1c57be60955664f9b24081e2dce0f7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9172479449300216309, guid: 8d1c57be60955664f9b24081e2dce0f7, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -145,7 +149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9172479449300216309, guid: 8d1c57be60955664f9b24081e2dce0f7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.76
+      value: -1.69
       objectReference: {fileID: 0}
     - target: {fileID: 9172479449300216309, guid: 8d1c57be60955664f9b24081e2dce0f7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2840,7 +2844,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2113203947
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4e4b57f840658294796634150406f340, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5309,8 +5313,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2136122023
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 953d8db2611c02940bc1fe64074e73de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6897,7 +6901,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2113203947
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ca769bdd94c5a4940a38c5e5c0057a84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8869,26 +8873,6 @@ CompositeCollider2D:
         Y: 166059632
       - X: -138813600
         Y: 179988096
-  - m_Collider: {fileID: 613283373}
-    m_ColliderPaths:
-    - - X: 282356256
-        Y: 107846880
-      - X: 270012512
-        Y: 103471880
-      - X: 201418768
-        Y: 34565628
-      - X: 201408880
-        Y: 17561698
-      - X: 270177568
-        Y: 76226784
-      - X: 278824064
-        Y: 76373320
-      - X: 283125984
-        Y: 81417160
-      - X: 282981248
-        Y: 107846880
-      - X: 282825024
-        Y: 108003128
   - m_Collider: {fileID: 1836260579}
     m_ColliderPaths:
     - - X: -135824096
@@ -9189,6 +9173,36 @@ CompositeCollider2D:
         Y: 15383046
       - X: -210193744
         Y: 15383046
+  - m_Collider: {fileID: 1496820726}
+    m_ColliderPaths:
+    - - X: -360312512
+        Y: -71571872
+      - X: -504687488
+        Y: -71571872
+      - X: -504687488
+        Y: -109228128
+      - X: -360312512
+        Y: -109228128
+  - m_Collider: {fileID: 613283373}
+    m_ColliderPaths:
+    - - X: 282356256
+        Y: 107846880
+      - X: 270012512
+        Y: 103471880
+      - X: 201418768
+        Y: 34565628
+      - X: 201408880
+        Y: 17561698
+      - X: 270177568
+        Y: 76226784
+      - X: 278824064
+        Y: 76373320
+      - X: 283125984
+        Y: 81417160
+      - X: 282981248
+        Y: 107846880
+      - X: 282825024
+        Y: 108003128
   m_CompositePaths:
     m_Paths:
     - - {x: -31.724794, y: 9.854454}
@@ -9511,6 +9525,10 @@ CompositeCollider2D:
       - {x: -1.735, y: -12.00703}
       - {x: -1.7349708, y: -13.127001}
       - {x: 5.138713, y: -13.12703}
+    - - {x: -36.03128, y: -10.922812}
+      - {x: -36.03128, y: -7.1571875}
+      - {x: -50.46875, y: -7.157217}
+      - {x: -50.46872, y: -10.922812}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -13842,8 +13860,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1496820725}
   - component: {fileID: 1496820724}
+  - component: {fileID: 1496820726}
   m_Layer: 0
-  m_Name: EngineWall01
+  m_Name: EngineWallS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13916,6 +13935,32 @@ Transform:
   m_Father: {fileID: 1078712008}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1496820726
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496820723}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 1
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 14.4375, y: 3.765625}
+    newSize: {x: 14.4375, y: 3.765625}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 14.4375, y: 3.765625}
+  m_EdgeRadius: 0
 --- !u!1 &1507106199
 GameObject:
   m_ObjectHideFlags: 0
@@ -14324,7 +14369,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2127125827
-  m_SortingLayer: -2
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f06482227626de74789be31bb5a879d6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -16435,7 +16480,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2113203947
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 94ddef6e40ceb8e4cbd7b2c5d7404f99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -16618,7 +16663,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2113203947
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e6bcb814c7e2d174d848371437945671, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
