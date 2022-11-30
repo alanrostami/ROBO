@@ -1,27 +1,82 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TaskManager : MonoBehaviour
 {
-    // private float totalTime = 300.0f;
-    // private float taskDeadline = 30.0f;
-    // private bool isDone = false;
+    public float taskDeadline = 30.0f;
+    private float remainingTime;
+    public bool currentTask;
+    private bool taskSuccess;
 
-    // public int taskCount;
+    void Start()
+    {
+        
+    }
 
-    // private void Update()
-    // {
-    //     CountDown();
-    // }
+    private void Update()
+    {
+        if(currentTask){
+            CountDown();
+        }
+    }
 
-    // private void CountDown()
-    // {
-    //     totalTime -= Time.deltaTime;
-    // }
+    public void EnableTask(){
+        Debug.Log(gameObject.name+" task has begun...");
+        currentTask = true;
+        remainingTime = taskDeadline;
+    }
 
-    // public void TaskIsDone()
-    // {
-    //     taskCount++;
-    // }
+    private void CountDown()
+    {
+        remainingTime -= Time.deltaTime;
+
+        if (remainingTime <= 0 && taskSuccess)
+        {
+            Debug.Log(currentTask);
+            Debug.Log("Next Task");
+            // if (taskSuccess)
+            // {
+            //     Debug.Log("Go On");
+            //     Debug.Log(currentTask);
+            // }
+            // else if (!taskSuccess)
+            // {
+            //     Debug.Log("Ship damaged");
+            //     Debug.Log(currentTask);
+            // }
+        }
+        else if (remainingTime <= 0 && !taskSuccess)
+        {
+            remainingTime = taskDeadline;
+            currentTask = false;
+            Debug.Log(currentTask);
+            Debug.Log("Ship damaged");
+        }
+    }
+
+    public void DoTheTask()
+    {        
+        if (currentTask)
+        {
+            taskSuccess = true;
+            currentTask = false;
+        }
+        else
+        {
+            Debug.Log("There is no task");
+        }
+    }
+
+    private void TaskSuccess()
+    {
+        taskSuccess = true;
+        currentTask = false;
+        Debug.Log("Task Success");
+    }
+
+    private void TaskFailed()
+    {
+        taskSuccess = false;
+        currentTask = false;
+        Debug.Log("Ship damaged");
+    }
 }
