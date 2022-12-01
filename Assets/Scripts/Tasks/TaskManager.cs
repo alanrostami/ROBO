@@ -43,6 +43,7 @@ public class TaskManager : MonoBehaviour
         {
             // hudManager.taskAnnounceText.text = taskObject + " in " + taskRoom + "has been repaird.";
             taskAnnounce.SetActive(false);
+            // currentTask = false;
         }
         else if (remainingTime <= 0 && !taskSuccess)
         {
@@ -62,7 +63,7 @@ public class TaskManager : MonoBehaviour
             currentTask = false;
             hudManager.taskAnnounceText.text = taskObject + "has been repaird.";
         }
-        else if (!currentTask && taskSuccess)
+        else if (!currentTask)
         {
             hudManager.taskAnnounceText.text = taskObject + " works fine.";
         }
