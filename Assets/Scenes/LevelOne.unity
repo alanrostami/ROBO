@@ -3443,6 +3443,7 @@ MonoBehaviour:
   - {fileID: 688940816}
   alienAlert: {fileID: 1175636750}
   startAlienAttackTime: 10
+  aliensKillInterval: 15
 --- !u!4 &463104373
 Transform:
   m_ObjectHideFlags: 0

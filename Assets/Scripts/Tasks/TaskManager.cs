@@ -32,7 +32,7 @@ public class TaskManager : MonoBehaviour
         currentTask = true;
         remainingTime = taskDeadline;
 
-        hudManager.taskAnnounceText.text = "Repaire the " + taskObject + " in " + taskRoom;
+        hudManager.taskAnnounceText.text = "Repair the " + taskObject + " in " + taskRoom;
         taskAnnounce.SetActive(true);
         animator.SetTrigger("ActiveTask");
     }
@@ -51,7 +51,7 @@ public class TaskManager : MonoBehaviour
             remainingTime = taskDeadline;
             currentTask = false;
             hudManager.spaceshipHealth -= taskDamage;
-            hudManager.taskAnnounceText.text = "You didn't repaire the " + taskObject;
+            hudManager.taskAnnounceText.text = "You didn't repair the " + taskObject;
         }
     }
 

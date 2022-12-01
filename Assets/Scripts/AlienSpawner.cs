@@ -17,6 +17,7 @@ public class AlienSpawner : MonoBehaviour
     public Transform[] spawnPoints;
     public GameObject alienAlert;
     public float startAlienAttackTime;
+    public float aliensKillInterval;
 
     private HUDManager hudManager;
     private AlienWave currentWave;
@@ -24,11 +25,16 @@ public class AlienSpawner : MonoBehaviour
     private float alienAttackCountDown;
     private float nextSpawnTime;
     private bool canSpawn = true;
+    private float remainingTime;
+    private int humanCount;
 
     void Start()
     {
         hudManager = GameObject.Find("HUDManager").GetComponent<HUDManager>();
         alienAlert.SetActive(false);
+
+        humanCount = 40;
+        remainingTime = aliensKillInterval;
     }
 
     private void Update()
@@ -50,6 +56,20 @@ public class AlienSpawner : MonoBehaviour
             else
             {
                 Debug.Log("End of Level One");
+            }
+        }
+
+        if (alienAttackCountDown >= startAlienAttackTime)
+        {
+            remainingTime -= Time.deltaTime;
+            Debug.Log(remainingTime);
+
+            if (remainingTime <= 0 && totalAliens.Length != 0)
+            {
+                humanCount--;
+                hudManager.aliveHumansText.text = humanCount.ToString();
+                
+                remainingTime = aliensKillInterval;
             }
         }
     }
@@ -81,5 +101,24 @@ public class AlienSpawner : MonoBehaviour
                 }
             }
         }
-    }    
+    }
+
+    void AliensKillHumans()
+    {
+        GameObject[] totalAliens = GameObject.FindGameObjectsWithTag("Alien");
+
+        if (alienAttackCountDown >= startAlienAttackTime)
+        {
+            remainingTime -= Time.deltaTime;
+            Debug.Log(remainingTime);
+
+            if (remainingTime <= 0)
+            {
+                humanCount--;
+                hudManager.aliveHumansText.text = humanCount.ToString();
+                
+                remainingTime = aliensKillInterval;
+            }
+        }
+    }
 }
