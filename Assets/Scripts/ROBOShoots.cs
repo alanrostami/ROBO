@@ -14,6 +14,7 @@ public class ROBOShoots : MonoBehaviour
     public float startShooting;
 
     [SerializeField] private float laserSpeed = 600.0f;
+    [SerializeField] private AudioSource laserShootSound;
 
     void Start()
     {
@@ -44,6 +45,7 @@ public class ROBOShoots : MonoBehaviour
             // If facing right, shoot laser to right
             GameObject laserToRight = Instantiate(laserBeamRight, laserPointRight.position, laserBeamRight.transform.rotation);
             laserToRight.GetComponent<Rigidbody2D>().AddForce(Vector2.right * laserSpeed);
+            laserShootSound.Play();
             Destroy(laserToRight, 1.5f);
         }
         else
@@ -51,6 +53,7 @@ public class ROBOShoots : MonoBehaviour
             // If facing left, shoot laser to left
             GameObject laserToLeft = Instantiate(laserBeamLeft, laserPointLeft.position, laserBeamLeft.transform.rotation);
             laserToLeft.GetComponent<Rigidbody2D>().AddForce(Vector2.left * laserSpeed);
+            laserShootSound.Play();
             Destroy(laserToLeft, 1.5f);
         }
     }
