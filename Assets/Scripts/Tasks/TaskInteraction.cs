@@ -16,7 +16,6 @@ public class TaskInteraction : MonoBehaviour
             if (Input.GetKeyDown(interactKey))
             {
                 interactAction.Invoke();
-                Debug.Log("Task Done");
             }
         }
     }

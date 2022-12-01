@@ -4,6 +4,7 @@ public class TaskManager : MonoBehaviour
 {
     public float taskDeadline = 30.0f;
     public GameObject taskAnnounce;
+    public Animator animator;
     private HUDManager hudManager;
     private float remainingTime;
     public int taskDamage;
@@ -33,6 +34,8 @@ public class TaskManager : MonoBehaviour
 
         hudManager.taskAnnounceText.text = "Repaire the " + taskObject + " in " + taskRoom;
         taskAnnounce.SetActive(true);
+        animator.SetTrigger("ActiveTask");
+        Debug.Log("Animation");
     }
 
     private void CountDown()
@@ -62,8 +65,9 @@ public class TaskManager : MonoBehaviour
             taskSuccess = true;
             currentTask = false;
             hudManager.taskAnnounceText.text = taskObject + "has been repaird.";
+            Debug.Log("Task Success");
         }
-        else if (!currentTask)
+        else
         {
             hudManager.taskAnnounceText.text = taskObject + " works fine.";
         }
