@@ -15,17 +15,29 @@ public class AlienSpawner : MonoBehaviour
 {
     public AlienWave[] alienWaves;
     public Transform[] spawnPoints;
+    public GameObject alienAlert;
+    public float startAlienAttackTime;
 
+    private HUDManager hudManager;
     private AlienWave currentWave;
     private int currentWaveNumber;
+    private float alienAttackCountDown;
     private float nextSpawnTime;
-
     private bool canSpawn = true;
+
+    void Start()
+    {
+        hudManager = GameObject.Find("HUDManager").GetComponent<HUDManager>();
+        alienAlert.SetActive(false);
+    }
 
     private void Update()
     {
+        alienAttackCountDown += Time.deltaTime;
         currentWave = alienWaves[currentWaveNumber];
+
         SpawnWave();
+    
         GameObject[] totalAliens = GameObject.FindGameObjectsWithTag("Alien");
 
         if (totalAliens.Length == 0 && !canSpawn)
@@ -50,17 +62,23 @@ public class AlienSpawner : MonoBehaviour
 
     void SpawnWave()
     {
-        if (canSpawn && nextSpawnTime < Time.time)
+        if (alienAttackCountDown >= startAlienAttackTime)
         {
-            GameObject randomAlien = currentWave.typeOfAliens[Random.Range(0, currentWave.typeOfAliens.Length)];
-            Transform randomPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-            Instantiate(randomAlien, randomPoint.position, Quaternion.identity);
-            currentWave.numberOfAliens--;
-            nextSpawnTime = Time.time + currentWave.spawnInterval;
-
-            if (currentWave.numberOfAliens == 0)
+            if (canSpawn && nextSpawnTime < Time.time)
             {
-                canSpawn = false;
+                GameObject randomAlien = currentWave.typeOfAliens[Random.Range(0, currentWave.typeOfAliens.Length)];
+                Transform randomPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+                Instantiate(randomAlien, randomPoint.position, Quaternion.identity);
+                currentWave.numberOfAliens--;
+                nextSpawnTime = Time.time + currentWave.spawnInterval;
+
+                alienAlert.SetActive(true);
+
+                if (currentWave.numberOfAliens == 0)
+                {
+                    canSpawn = false;
+                    alienAlert.SetActive(false);
+                }
             }
         }
     }    

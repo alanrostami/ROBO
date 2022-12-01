@@ -3433,6 +3433,8 @@ MonoBehaviour:
   - {fileID: 1931388014}
   - {fileID: 812404050}
   - {fileID: 688940816}
+  alienAlert: {fileID: 1175636750}
+  startAlienAttackTime: 10
 --- !u!4 &463104373
 Transform:
   m_ObjectHideFlags: 0
@@ -17572,6 +17574,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: ROBO
       objectReference: {fileID: 0}
+    - target: {fileID: 3291779975545639967, guid: d6fb36bcc5f5b6443a9544ed94ebdc07, type: 3}
+      propertyPath: m_Size.x
+      value: 0.8831825
+      objectReference: {fileID: 0}
+    - target: {fileID: 3291779975545639967, guid: d6fb36bcc5f5b6443a9544ed94ebdc07, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3291779975545639967, guid: d6fb36bcc5f5b6443a9544ed94ebdc07, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0034656525
+      objectReference: {fileID: 0}
     - target: {fileID: 3291779975545640418, guid: d6fb36bcc5f5b6443a9544ed94ebdc07, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -17614,6 +17628,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3291779975545640418, guid: d6fb36bcc5f5b6443a9544ed94ebdc07, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3291779975545640421, guid: d6fb36bcc5f5b6443a9544ed94ebdc07, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
