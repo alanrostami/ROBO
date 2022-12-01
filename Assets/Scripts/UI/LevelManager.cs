@@ -1,17 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    // public GameObject player;
+    public GameObject shipDestroydUI;
+    public GameObject allHumansDiedUI;
+    public GameObject arrivedToXOXOUI;
     public List<TaskManager> availableTasks;
     public float delay;
+
     private void Awake()
     {
         // Instantiate(player, transform.position, transform.rotation);
         Invoke("StartNewTask", delay);
     }
+
+    // void Start()
+    // {
+    //     Cursor.visible = false;
+    //     Cursor.lockState = CursorLockMode.Locked;
+    // }
+
+    // void Update()
+    // {
+    //     if (shipDestroydUI.activeInHierarchy)
+    //     {
+    //         Cursor.visible = true;
+    //         Cursor.lockState = CursorLockMode.None;
+    //     }
+    //     else
+    //     {
+    //         Cursor.visible = false;
+    //         Cursor.lockState = CursorLockMode.Locked;
+    //     }
+    // }
 
     private void StartNewTask()
     {
@@ -26,5 +50,33 @@ public class LevelManager : MonoBehaviour
                 Invoke("StartNewTask", delay);
             }
         }
+    }
+
+    public void ShipDestroyd()
+    {
+        shipDestroydUI.SetActive(true);
+    }
+
+    public void AllHumansDied()
+    {
+        allHumansDiedUI.SetActive(true);
+    }
+
+    public void ArrivedToXOXO()
+    {
+        arrivedToXOXOUI.SetActive(true);
+    }
+
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // shipDestroydUI.SetActive(false);
+        // allHumansDiedUI.SetActive(false);
+        // arrivedToXOXOUI.SetActive(false);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }

@@ -62,12 +62,13 @@ public class AlienSpawner : MonoBehaviour
         if (alienAttackCountDown >= startAlienAttackTime)
         {
             remainingTime -= Time.deltaTime;
-            Debug.Log(remainingTime);
 
             if (remainingTime <= 0 && totalAliens.Length != 0)
             {
                 humanCount--;
                 hudManager.aliveHumansText.text = humanCount.ToString();
+
+                hudManager.aliveHumans = humanCount;
                 
                 remainingTime = aliensKillInterval;
             }
@@ -110,11 +111,11 @@ public class AlienSpawner : MonoBehaviour
         if (alienAttackCountDown >= startAlienAttackTime)
         {
             remainingTime -= Time.deltaTime;
-            Debug.Log(remainingTime);
 
             if (remainingTime <= 0)
             {
                 humanCount--;
+                hudManager.aliveHumans = humanCount;
                 hudManager.aliveHumansText.text = humanCount.ToString();
                 
                 remainingTime = aliensKillInterval;

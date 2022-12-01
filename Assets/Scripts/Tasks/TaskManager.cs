@@ -41,17 +41,21 @@ public class TaskManager : MonoBehaviour
     {
         remainingTime -= Time.deltaTime;
 
-        if (remainingTime <= 0 && taskSuccess)
+        if (remainingTime <= 0)
         {
-            taskAnnounce.SetActive(false);
-            currentTask = false;
-        }
-        else if (remainingTime <= 0 && !taskSuccess)
-        {
-            remainingTime = taskDeadline;
-            currentTask = false;
-            hudManager.spaceshipHealth -= taskDamage;
-            hudManager.taskAnnounceText.text = "You didn't repair the " + taskObject;
+            // taskAnnounce.SetActive(false);
+
+            if (taskSuccess)
+            {
+                currentTask = false;
+            }
+            else
+            {
+                remainingTime = taskDeadline;
+                currentTask = false;
+                hudManager.spaceshipHealth -= taskDamage;
+                hudManager.taskAnnounceText.text = "You didn't repair the " + taskObject;
+            }
         }
     }
 
@@ -64,6 +68,10 @@ public class TaskManager : MonoBehaviour
             hudManager.taskAnnounceText.text = taskObject + " has been repaird.";
 
             animator.SetTrigger("DeactiveTask");
+        }
+        else
+        {
+            hudManager.taskAnnounceText.text = "No repair needed here.";
         }
     }
 }

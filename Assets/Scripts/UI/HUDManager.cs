@@ -6,7 +6,7 @@ using System;
 
 public class HUDManager : MonoBehaviour
 {
-    //This is a reference to the Text component on the HUD gameobject that will display how much time has passed since the level started
+    public LevelManager levelManager;
     public Text daysToArriveText;
     public Text spaceshipHealthText;
     public Text aliveHumansText;
@@ -15,6 +15,9 @@ public class HUDManager : MonoBehaviour
     public int spaceshipHealth;
     public int aliveHumans;
     public float daysToArrive;
+    private bool shipDestroyd;
+    private bool allHumansDied;
+    private bool arrivedToXOXO;
 
     private void Start()
     {
@@ -31,12 +34,33 @@ public class HUDManager : MonoBehaviour
     private void Update()
     {
         DecreaseDays();
+
         spaceshipHealthText.text = spaceshipHealth.ToString() + "%";
+
+        aliveHumansText.text = aliveHumans.ToString();
+
+        if (spaceshipHealth <= 0 && !shipDestroyd)
+        {
+            shipDestroyd = true;
+            levelManager.ShipDestroyd();
+        }
+
+        if (aliveHumans <= 0 && !allHumansDied)
+        {
+            allHumansDied = true;
+            levelManager.AllHumansDied();
+        }
     }
 
     private void DecreaseDays()
     {
-        daysToArrive -= 0.01f * Time.deltaTime;
+        daysToArrive -= 0.05f * Time.deltaTime;
         daysToArriveText.text = daysToArrive.ToString("0");
+
+        if (daysToArrive <= 0 && !arrivedToXOXO)
+        {
+            arrivedToXOXO = true;
+            levelManager.ArrivedToXOXO();
+        }
     }
 }
