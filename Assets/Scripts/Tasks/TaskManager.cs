@@ -30,6 +30,7 @@ public class TaskManager : MonoBehaviour
     public void EnableTask()
     {
         currentTask = true;
+        taskSuccess = false;
         remainingTime = taskDeadline;
 
         hudManager.taskAnnounceText.text = "Repair the " + taskObject + " in " + taskRoom;
@@ -41,39 +42,28 @@ public class TaskManager : MonoBehaviour
     {
         remainingTime -= Time.deltaTime;
 
-        if (remainingTime <= 0)
+        if (remainingTime <= 0 && !taskSuccess)
         {
-            if (taskSuccess)
-            {
-                // hudManager.taskAnnounceText.text = taskObject + " has been repaird.";
-            }
-            else if (!taskSuccess)
-            {
-                // remainingTime = taskDeadline;
-                hudManager.spaceshipHealth -= taskDamage;
-                hudManager.taskAnnounceText.text = "You didn't repair the " + taskObject;
-            }
-
             currentTask = false;
+            hudManager.spaceshipHealth -= taskDamage;
+            hudManager.taskAnnounceText.text = "You didn't repair the " + taskObject;
             remainingTime = taskDeadline;
         }
     }
 
     public void DoTheTask()
     {
-        if (currentTask)
+        if (currentTask && !taskSuccess)
         {
             taskSuccess = true;
-            // currentTask = false;
-            Debug.Log(currentTask);
+            currentTask = false;
             hudManager.taskAnnounceText.text = taskObject + " has been repaird.";
 
             animator.SetTrigger("DeactiveTask");
         }
-        else if (!currentTask)
+        else if (currentTask && taskSuccess)
         {
             hudManager.taskAnnounceText.text = "No repair needed here.";
-            Debug.Log(currentTask);
         }
     }
 }

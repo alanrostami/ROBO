@@ -8,8 +8,10 @@ public class LevelManager : MonoBehaviour
     public GameObject shipDestroydUI;
     public GameObject allHumansDiedUI;
     public GameObject arrivedToXOXOUI;
+    public GameObject pauseMenu;
     public List<TaskManager> availableTasks;
     public float delay;
+    public static bool isPaused;
 
     private void Awake()
     {
@@ -23,19 +25,20 @@ public class LevelManager : MonoBehaviour
     //     Cursor.lockState = CursorLockMode.Locked;
     // }
 
-    // void Update()
-    // {
-    //     if (shipDestroydUI.activeInHierarchy)
-    //     {
-    //         Cursor.visible = true;
-    //         Cursor.lockState = CursorLockMode.None;
-    //     }
-    //     else
-    //     {
-    //         Cursor.visible = false;
-    //         Cursor.lockState = CursorLockMode.Locked;
-    //     }
-    // }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused)
+            {
+                ResumeGame();
+            }
+            else
+            {
+                PauseGame();
+            }
+        }
+    }
 
     private void StartNewTask()
     {
@@ -70,9 +73,20 @@ public class LevelManager : MonoBehaviour
     public void PlayAgain()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        // shipDestroydUI.SetActive(false);
-        // allHumansDiedUI.SetActive(false);
-        // arrivedToXOXOUI.SetActive(false);
+    }
+
+    public void PauseGame()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0.0f;
+        isPaused = true;
+    }
+
+    public void ResumeGame()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1.0f;
+        isPaused = false;
     }
 
     public void ExitGame()
