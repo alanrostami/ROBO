@@ -35,7 +35,6 @@ public class TaskManager : MonoBehaviour
         hudManager.taskAnnounceText.text = "Repaire the " + taskObject + " in " + taskRoom;
         taskAnnounce.SetActive(true);
         animator.SetTrigger("ActiveTask");
-        Debug.Log("Animation");
     }
 
     private void CountDown()
@@ -44,9 +43,8 @@ public class TaskManager : MonoBehaviour
 
         if (remainingTime <= 0 && taskSuccess)
         {
-            // hudManager.taskAnnounceText.text = taskObject + " in " + taskRoom + "has been repaird.";
             taskAnnounce.SetActive(false);
-            // currentTask = false;
+            currentTask = false;
         }
         else if (remainingTime <= 0 && !taskSuccess)
         {
@@ -54,7 +52,6 @@ public class TaskManager : MonoBehaviour
             currentTask = false;
             hudManager.spaceshipHealth -= taskDamage;
             hudManager.taskAnnounceText.text = "You didn't repaire the " + taskObject;
-            // taskAnnounce.SetActive(false);
         }
     }
 
@@ -64,26 +61,9 @@ public class TaskManager : MonoBehaviour
         {
             taskSuccess = true;
             currentTask = false;
-            hudManager.taskAnnounceText.text = taskObject + "has been repaird.";
-            Debug.Log("Task Success");
-        }
-        else
-        {
-            hudManager.taskAnnounceText.text = taskObject + " works fine.";
+            hudManager.taskAnnounceText.text = taskObject + " has been repaird.";
+
+            animator.SetTrigger("DeactiveTask");
         }
     }
-
-    // private void TaskSuccess()
-    // {
-    //     taskSuccess = true;
-    //     currentTask = false;
-    //     Debug.Log("Task Success");
-    // }
-
-    // private void TaskFailed()
-    // {
-    //     taskSuccess = false;
-    //     currentTask = false;
-    //     Debug.Log("Ship damaged");
-    // }
 }

@@ -8,6 +8,12 @@ public class TaskInteraction : MonoBehaviour
     public bool isInRange;
     public KeyCode interactKey;
     public UnityEvent interactAction;
+    public GameObject taskNotif;
+
+    void Start()
+    {
+        taskNotif.SetActive(false);
+    }
     
     void Update()
     {
@@ -25,7 +31,7 @@ public class TaskInteraction : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isInRange = true;
-            Debug.Log("Player is in range");
+            taskNotif.SetActive(true);
         }
     }
 
@@ -34,7 +40,7 @@ public class TaskInteraction : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isInRange = true;
-            Debug.Log("Player is not in range");
+            taskNotif.SetActive(false);
         }
     }
 }
