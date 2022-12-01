@@ -10503,6 +10503,14 @@ PrefabInstance:
       propertyPath: taskAnnounce
       value: 
       objectReference: {fileID: 379097602}
+    - target: {fileID: 5878926363233217575, guid: 8d1c57be60955664f9b24081e2dce0f7, type: 3}
+      propertyPath: m_Size.y
+      value: 1.3774676
+      objectReference: {fileID: 0}
+    - target: {fileID: 5878926363233217575, guid: 8d1c57be60955664f9b24081e2dce0f7, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.4383762
+      objectReference: {fileID: 0}
     - target: {fileID: 6986094220418251640, guid: 8d1c57be60955664f9b24081e2dce0f7, type: 3}
       propertyPath: m_Color.b
       value: 1
