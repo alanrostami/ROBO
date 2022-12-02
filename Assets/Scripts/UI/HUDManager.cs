@@ -51,7 +51,7 @@ public class HUDManager : MonoBehaviour
 
     private void DecreaseDays()
     {
-        daysToArrive -= 0.05f * Time.deltaTime;
+        daysToArrive -= 0.04f * Time.deltaTime;
         daysToArriveText.text = daysToArrive.ToString("0");
 
         if (daysToArrive <= 0 && !arrivedToXOXO)
