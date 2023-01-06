@@ -27,6 +27,12 @@ public class ROBOMoves : MonoBehaviour
         moveX = Input.GetAxisRaw("Horizontal");
         moveY = Input.GetAxisRaw("Vertical");
 
+        if (moveY > 0.0f)
+        {
+            // Play flying animation
+            animator.SetTrigger("Fly");
+        }
+
         rgdbdy.velocity = new Vector2(moveX * moveSpeed, moveY * moveSpeed);
 
         UpdateAnimationState();
