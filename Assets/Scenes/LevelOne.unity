@@ -1925,7 +1925,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2d601f0ec5d0a494cafc34f127b22087, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -7645,6 +7645,10 @@ PrefabInstance:
       propertyPath: taskAnnounce
       value: 
       objectReference: {fileID: 379097602}
+    - target: {fileID: 4241254669583925616, guid: 919e54165d15ae44f945af5d30802c74, type: 3}
+      propertyPath: taskDeadline
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3711152029207059707, guid: 919e54165d15ae44f945af5d30802c74, type: 3}
@@ -11672,7 +11676,7 @@ PrefabInstance:
       objectReference: {fileID: 379097602}
     - target: {fileID: 4183552243099859379, guid: 8d1c57be60955664f9b24081e2dce0f7, type: 3}
       propertyPath: taskDeadline
-      value: 15
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5878926363233217575, guid: 8d1c57be60955664f9b24081e2dce0f7, type: 3}
       propertyPath: m_Size.y
@@ -13873,7 +13877,7 @@ PrefabInstance:
       objectReference: {fileID: 379097602}
     - target: {fileID: -6584259099656618062, guid: 8e50e734ce5d44747a7ea85db9de3e33, type: 3}
       propertyPath: taskDeadline
-      value: 35
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4662186940173238420, guid: 8e50e734ce5d44747a7ea85db9de3e33, type: 3}
       propertyPath: m_Color.b
@@ -19004,7 +19008,7 @@ PrefabInstance:
       objectReference: {fileID: 379097602}
     - target: {fileID: 4183552243099859379, guid: 8d1c57be60955664f9b24081e2dce0f7, type: 3}
       propertyPath: taskDeadline
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5878926363233217575, guid: 8d1c57be60955664f9b24081e2dce0f7, type: 3}
       propertyPath: m_Size.y
@@ -19355,7 +19359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a230607f2967ddb42b967a7bb5fcbf49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskDeadline: 20
+  taskDeadline: 30
   taskAnnounce: {fileID: 379097602}
   animator: {fileID: 1645664289}
   taskDamage: 20
@@ -21361,6 +21365,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5050696666479228853, guid: d6fb36bcc5f5b6443a9544ed94ebdc07, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050696666479228853, guid: d6fb36bcc5f5b6443a9544ed94ebdc07, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 6513d1ca1c1806045962e8035906fa54, type: 3}
@@ -21837,6 +21845,10 @@ PrefabInstance:
       propertyPath: taskAnnounce
       value: 
       objectReference: {fileID: 379097602}
+    - target: {fileID: 3757603648871401349, guid: af8421a03a4a5754da43cf4bb19cc8f4, type: 3}
+      propertyPath: taskDeadline
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 8428298273759672182, guid: af8421a03a4a5754da43cf4bb19cc8f4, type: 3}
       propertyPath: m_Name
       value: TaskStorage
@@ -23277,7 +23289,7 @@ PrefabInstance:
       objectReference: {fileID: 379097602}
     - target: {fileID: -5805490598606055492, guid: 2f90b7aad32915a46819e23eeb257462, type: 3}
       propertyPath: taskDeadline
-      value: 45
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2848158910679421792, guid: 2f90b7aad32915a46819e23eeb257462, type: 3}
       propertyPath: m_Color.b
@@ -24015,7 +24027,7 @@ PrefabInstance:
       objectReference: {fileID: 379097602}
     - target: {fileID: 1208226702523616955, guid: 25f3c3fffcbb5ff45a5146d600a2cae0, type: 3}
       propertyPath: taskDeadline
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2529729708016722025, guid: 25f3c3fffcbb5ff45a5146d600a2cae0, type: 3}
       propertyPath: m_RootOrder

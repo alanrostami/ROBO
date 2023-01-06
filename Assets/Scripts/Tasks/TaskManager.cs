@@ -46,7 +46,7 @@ public class TaskManager : MonoBehaviour
         {
             currentTask = false;
             hudManager.spaceshipHealth -= taskDamage;
-            hudManager.taskAnnounceText.text = "You didn't repair the " + taskObject;
+            hudManager.taskAnnounceText.text = taskObject + " is beyond repair.";
             remainingTime = taskDeadline;
         }
     }
@@ -57,13 +57,13 @@ public class TaskManager : MonoBehaviour
         {
             taskSuccess = true;
             currentTask = false;
-            hudManager.taskAnnounceText.text = taskObject + " has been repaird.";
+            hudManager.taskAnnounceText.text = taskObject + " has been repaired.";
 
             animator.SetTrigger("DeactiveTask");
         }
         else if (currentTask && taskSuccess)
         {
-            hudManager.taskAnnounceText.text = "No repair needed here.";
+            hudManager.taskAnnounceText.text = "It works fine.";
         }
     }
 }
