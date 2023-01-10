@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ROBOFlys : MonoBehaviour
@@ -7,8 +5,8 @@ public class ROBOFlys : MonoBehaviour
     public Animator animator;
     private Rigidbody2D rgdbdy;
 
-    private float moveY = 0.0f;
-    private float moveSpeed = 5.0f;
+    public float flySpeed = 10.0f;
+    // private float moveSpeed = 5.0f;
 
     private void Start()
     {
@@ -21,7 +19,7 @@ public class ROBOFlys : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             // Play flying animation
-            rgdbdy.velocity = new Vector2(0, moveY * moveSpeed);
+            rgdbdy.velocity = new Vector2(0, flySpeed * Time.deltaTime);
             animator.SetTrigger("Fly");
         }
     }

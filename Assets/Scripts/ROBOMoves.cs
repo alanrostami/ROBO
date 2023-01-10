@@ -12,7 +12,7 @@ public class ROBOMoves : MonoBehaviour
     [SerializeField] private float moveSpeed = 5.0f;
 
     // List of player's animation states
-    private enum ROBOAnimationState {idle, moving, stop}
+    private enum ROBOAnimationState {idle, moving, stop, flying}
     // private ROBOAnimationState state = ROBOAnimationState.idle;
 
     private void Start()
@@ -24,14 +24,8 @@ public class ROBOMoves : MonoBehaviour
 
     private void Update()
     {
-        moveX = Input.GetAxisRaw("Horizontal");
+        moveX = Input.GetAxisRaw("Horizontal");        
         moveY = Input.GetAxisRaw("Vertical");
-
-        if (moveY > 0.0f)
-        {
-            // Play flying animation
-            animator.SetTrigger("Fly");
-        }
 
         rgdbdy.velocity = new Vector2(moveX * moveSpeed, moveY * moveSpeed);
 
@@ -67,6 +61,11 @@ public class ROBOMoves : MonoBehaviour
         else
         {
             state = ROBOAnimationState.idle;
+        }
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            state = ROBOAnimationState.flying;
         }
 
         animator.SetInteger("State", (int)state);
